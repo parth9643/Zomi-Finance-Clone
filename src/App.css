@@ -1,0 +1,1020 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.44;
+  font-weight: 400;
+  position: relative;
+  background: #191919;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 25, 25);
+  padding: 1rem;
+  height: 70px;
+  position: relative;
+  cursor: pointer;
+  /* Add position relative for pseudo-element */
+}
+
+/* Add this code to create a line when the navbar finishes */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  /* Color of the line */
+  opacity: 0.2;
+  /* Adjust opacity as needed */
+}
+
+/* Rest of your existing CSS */
+
+/* Style for the logo */
+.logo {
+  display: inline-block;
+  
+  /* Slightly reduced height */
+  margin-left: 20px;
+  display: flex;
+  /* Align logo and text horizontally */
+  align-items: center;
+  cursor: pointer;
+  /* Vertically center the logo */
+}
+
+.img1 {
+  width: 100px;
+  height: 70px;
+  /* Auto height for responsive scaling */
+}
+
+/* Style for the navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+
+  /* Vertically align navigation links */
+}
+
+.nav-links li {
+  margin: 0 1rem;
+  padding: 0.25rem;
+
+}
+
+.nav-links a {
+  color: #a7a7a9;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: border-bottom 0.3s ease;
+  cursor: pointer !important;
+
+}
+
+/* Hover effect on navigation links */
+.nav-links a:hover {
+  color: white;
+
+  border-bottom: 2px solid white;
+}
+
+.bx1 {
+  background: #3eb489;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  list-style: none;
+  margin-right:5px;
+}
+
+.bx1 a {
+  color: white;
+  cursor: pointer;
+}
+
+.bx1:hover {
+  background-color: #48d69a;
+}
+
+/* Style for the wallet */
+.wallet {
+  display: flex;
+  align-items: center;
+  margin-right: 0rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.img2 {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  /* Add spacing between image and text */
+}
+
+.wallet a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn2 {
+  display: flex;
+  align-items: center;
+}
+
+.btn3 {
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn3:hover {
+  background-color: #48d69a;
+
+}
+
+.network-dropdown-icon {
+  width: 14px;
+  height: 14px;
+}
+
+
+/* Your existing CSS */
+
+/* Media query for small and medium devices */
+@media screen and (max-width: 768px) {
+  body{
+    width: 100%;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(27, 25, 25);
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    height: 70px;
+  }
+
+  .navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    opacity: 0.2;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .img1 {
+    width: 70px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 1rem 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+  }
+
+  .navbar.active .nav-links {
+    opacity: 2;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: border-bottom 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    border-bottom: 2px solid white;
+  }
+
+  .wallet {
+    align-items: center;
+    margin-right: 0rem;
+    border: 1px solid white;
+    border-radius: 15px;
+    width:7rem;
+  }
+
+  .wallet .img2 {
+    width: 18px; /* Adjust the width for the wallet icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0.5rem; /* Add spacing between image and text */
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 30px;
+    left: 0px; /* Adjust this value for desired position */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 5;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu-button.active .menu-icon {
+    transform: rotate(45deg);
+  }
+
+  .menu-button.active .menu-icon:before,
+  .menu-button.active .menu-icon:after {
+    transform: rotate(-45deg);
+  }
+
+  .menu-icon:before,
+  .menu-icon:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu-button.active .menu-icon:before {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .menu-button.active .menu-icon:after {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-button.hidden {
+    display: none;
+  }
+}
+
+
+/*Home section*/
+
+.Home {
+  min-height: 100vh;
+  position: relative;
+}
+
+.Home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  opacity: 0.2;
+}
+
+.Home2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 5.8rem;
+  position: relative;
+  /* height: 52.581rem; */
+  padding-bottom: 6.4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  margin-top: -6.2rem;
+}
+
+
+.Home-title1 {
+  font-size: 4.6rem;
+  line-height: 5.6rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0;
+  margin-left: 30px;
+  color: white;
+}
+
+.Home-title-sec {
+  position: relative;
+  width: 100%;
+  padding-top: 4.2rem;
+}
+
+.Home-title-sec1 {
+  max-width: 53rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Desc {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  max-width: 30rem;
+  color: #cecece;
+  margin-left: 30px;
+  margin-bottom: 1rem;
+}
+
+.Home-btn {
+  background: #3eb489;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #ffffff !important;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin-left: 30px;
+  position: relative;
+  min-height: 3.6rem;
+  display: inline-flex !important;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+}
+
+.Home-btn:hover {
+  background: #207a59;
+}
+
+/* Rest of your existing CSS */
+
+/* Style for the Home-info section */
+.Home-info-sec {
+  display: flex;
+  justify-content: space-between;
+  max-width: 126.4rem;
+  margin: 0 auto;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-top: 8rem;
+}
+
+
+
+/* Style for the Home-info boxes */
+.Home-info {
+  width: calc(33.33% - 1.6rem);
+  height: 9rem;
+  box-sizing: border-box;
+  padding: 0 0.8rem;
+  /* Add spacing between boxes */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0.7rem 0.8rem rgba(0, 0, 0, 0.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.0784313725490196);
+  border-radius: 4px;
+}
+
+/* Style for the info1 image */
+.info1-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  /* Add spacing between image and content */
+}
+
+/* Style for the content inside the boxes */
+.home-info1-cont {
+  color: #cecece;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  max-width: calc(100% - 80px);
+}
+
+.cont-tittle {
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+  margin-left: 1rem;
+
+}
+
+.cont-info {
+  font-family: "RelativeNumber";
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-left: 1rem;
+}
+
+/* Mobile-first responsive styles */
+@media only screen and (max-width: 768px) {
+  .Home {
+    min-height: auto;
+  }
+
+  .Home2 {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+    margin-top: 0;
+    background-position: center;
+  }
+
+  .Home-title1 {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-left: 15px;
+  }
+
+  .Home-title-sec1 {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Desc {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .Home-btn {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 2.8rem;
+    margin-left: 0;
+  }
+
+  .Home-info-sec {
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 4rem;
+    padding: 0 1rem;
+  }
+
+  .Home-info {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .info1-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+
+  .home-info1-cont {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .cont-tittle {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .cont-info {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Restrict content from moving in the right direction */
+  .Home::after {
+    display: none;
+  }
+}
+
+/* Tablet and larger screen styles */
+@media only screen and (min-width: 769px) {
+  .Home-title-sec1 {
+    max-width: 60%;
+  }
+}
+
+
+/*Home sub class*/
+.Home-sub-sec {
+  display: flex;
+  margin-top: -5rem;
+
+
+}
+
+.Home-info-sec1 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 126.4rem;
+  margin: 0 auto;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  margin-top: 8rem;
+}
+
+.Home-info2 {
+  width: calc(33.33% - 1.6rem);
+  height: 9rem;
+  padding: 0 0.8rem;
+  /* Add spacing between boxes */
+  display: flex;
+  align-items: center;
+}
+
+.info1-img1 {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  margin-top: 3.5rem;
+  /* Add spacing between image and content */
+}
+
+.cont-tittle1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.new-text {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  margin-left: -4.7rem;
+
+  /* Adjust the font size as needed */
+  color: white;
+  /* Adjust the color as needed */
+  margin-top: 1rem;
+  /* Add margin to separate from the existing text */
+}
+
+/* Mobile-first responsive styles */
+@media only screen and (max-width: 768px) {
+  .Home-sub-sec {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .Home-info-sec1 {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 6rem auto;
+    padding: 0 1.6rem;
+  }
+
+  .Home-info2 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+   
+  }
+
+  .info1-img1 {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .cont-tittle1 {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .new-text {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-left: 0;
+    color: white; /* Adjust the color for better readability */
+    margin-top: 1rem;
+  }
+}
+
+/* Tablet and larger screen styles */
+@media only screen and (min-width: 769px) {
+  .Home-sub-sec {
+    margin-top: -5rem;
+  }
+
+  .Home-info-sec1 {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 126.4rem;
+    margin: 8rem auto;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+  }
+
+  .Home-info2 {
+    width: calc(33.33% - 1.6rem);
+    height: 9rem;
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .info1-img1 {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    margin-top: 3.5rem;
+  }
+
+  .cont-tittle1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+  }
+
+  .new-text {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-left: -4.7rem;
+    color: white;
+    margin-top: 1rem;
+  }
+}
+
+
+/*Home sub  class2*/
+
+.Home-token-card-section {
+  padding-top: 18.75rem;
+  padding-bottom: 7.75rem;
+  margin-bottom: -4.65rem;
+  color: white;
+}
+
+.default-container {
+  max-width: 126.4rem;
+  padding-left: 7.2rem;
+  padding-right: 3.2rem;
+  margin: 0 auto;
+}
+
+.Home-token-card-info {
+  max-width: 38.75rem;
+}
+
+.Home-token-card-info__title {
+  font-size: 3.4rem;
+  line-height: 3.8rem;
+  font-weight: 700;
+  padding-left: 3rem;
+  margin-bottom: 3.1rem;
+  letter-spacing: 0;
+}
+
+/* Adjust layout to 50% width for each box */
+.Home-token-card-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Distributes space evenly between boxes */
+  padding-left: 3rem;
+}
+
+/* Box styling */
+.Home-token-card-option {
+  flex: 1;
+  /* Each box takes 50% of the available space */
+  padding: 1.5rem;
+  box-shadow: 0px 0.5rem 1.3rem #00000085;
+  border: 1px solid #4d4d4e;
+  border-radius: 8px;
+  background: #191919;
+}
+
+/* Icon and token name styling */
+.Home-token-card-option-icon {
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #ffffff;
+}
+
+.Home-token-card-option-icon img {
+  margin-right: 0.5rem;
+  width: 30px;
+  height: 30px;
+}
+
+/* Token title styling */
+.Home-token-card-option-title {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+/* APR styling */
+.Home-token-card-option-apr {
+  font-size: 1.2rem;
+  line-height: 2.3rem;
+  color: #cecece;
+  margin-top: 1rem;
+}
+
+/* Action button styling */
+.Home-token-card-option-action {
+  margin-top: 1.9375rem;
+  display: flex;
+}
+
+/* Button styling */
+.default-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #3eb489;
+  color: #ffffff;
+  border: none;
+}
+
+.default-btn:hover {
+  background-color: #2d8f6f;
+}
+
+/* Read more button styling */
+.read-more {
+  margin-left: 1rem;
+  background-color: #191919;
+  border: 2px solid white;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #1a1a1a;
+  border-color: #3eb489;
+}
+
+
+.Home-token-card-section1 {
+  padding-top: -100rem;
+  margin-left: 40rem;
+  margin-top: -27.2rem;
+  padding-bottom: 7.75rem;
+  margin-bottom: -4.65rem;
+  color: white;
+}
+
+.Home-token-card-info1 {
+  max-width: 57.75rem;
+}
+
+.Home-token-card-options1 {
+  display: flex;
+  grid-template-columns: 100fr 1fr;
+  justify-content: flex-end;
+  /* Swap the column order */
+  justify-content: space-between;
+  /* Distributes space evenly between boxes */
+  padding-right: 3rem;
+  /* Change to padding-right to push the boxes to the right */
+}
+
+/* Box styling */
+.Home-token-card-option1 {
+  flex: 1;
+  /* Each box takes 50% of the available space */
+  padding: 1.5rem;
+  justify-content: flex-end;
+  flex-direction: column;
+  box-shadow: 0px 0.5rem 1.3rem #00000085;
+  border: 1px solid #4d4d4e;
+  border-radius: 8px;
+  background: #191919;
+}
+
+/* Adding a line after the boxes */
+.home-sec11::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  opacity: 0.2;
+}
+
+/* Mobile-first responsive styles */
+/* Mobile-first responsive styles */
+@media only screen and (max-width: 768px) {
+  .Home-token-card-options,
+  .Home-token-card-options1 {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .Home-token-card-option,
+  .Home-token-card-option1 {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1.3rem rgba(0, 0, 0, 0.5);
+    border: 1px solid #4d4d4e;
+    border-radius: 8px;
+    background: #191919;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .Home-token-card-section1 {
+    display: none;
+  }
+}
+
+/* Tablet and larger screen styles */
+@media only screen and (min-width: 769px) {
+  .Home-token-card-options,
+  .Home-token-card-options1 {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .Home-token-card-option,
+  .Home-token-card-option1 {
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: 0px 0.5rem 1.3rem rgba(0, 0, 0, 0.5);
+    border: 1px solid #4d4d4e;
+    border-radius: 8px;
+    background: #191919;
+  }
+}
+
+
+/*Footer*/
+/* Apply styling to the footer */
+/* Apply styling to the footer */
+.Footer {
+  background-color: #151515;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.Footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Footer-logo img {
+  max-height: 50px;
+}
+.Footer-social-link-block {
+  display: flex;
+  gap: 70px;
+  margin-top: 20px;
+  justify-content: center;
+  margin-bottom: 10px; 
+}
+
+.App-social-link img {
+  max-height: 30px;
+  filter: brightness(70%);
+  transition: filter 0.3s ease;
+}
+
+.App-social-link img:hover {
+  filter: brightness(100%);
+}
+
+.Footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 5px;
+  font-family: Circular Std;
+  justify-content: center;
+}
+
+.Footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Circular Std;
+  margin: 2px 0;
+}
+
+/* Responsive adjustments */
+/* Your existing CSS */
+
+/* Media query for small and medium devices */
+/* Your existing CSS */
+
+/* Media query for small and medium devices */
+
+
+@media (max-width: 900px) {
+  .Footer-social-link-block .App-social-link {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .Footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer-link {
+    margin: 5px 0;
+  }
+
+  .Footer-social-link-block {
+    margin-bottom: 1.5rem;
+    gap:30px;
+  }
+
+  .Footer-wrapper {
+    padding-top: 2rem;
+  }
+
+  .Footer-links {
+    gap:20px;
+  }
+
+}
